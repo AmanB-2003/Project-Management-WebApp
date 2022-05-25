@@ -6,7 +6,7 @@
         <title>homepage</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- <link rel="stylesheet" href="css/styles.css"> -->
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body>
@@ -23,9 +23,9 @@
                     <ul>
                         <form action="/delete" method="post">
 
-                        <li><input type="checkbox" id="checkbox" id="todo"> task <button type="submit" name="deleteItem">&#215</button></li>
+                        <li> task <button type="submit" name="deleteItem">&#215</button></li>
                         <%  for(var i=0;i<todoListItems.length; i++){ %>
-                            <li><input type="checkbox" id="checkbox" class="todo" ><%= todoListItems[i].name %><button type="submit" name="deleteItem" value="<%= todoListItems[i]._id %>">&#215</button></li>
+                            <li><%= todoListItems[i].name %><button type="submit" name="deleteItem" value="<%= todoListItems[i]._id %>">&#215</button></li>
                         <% } %> 
                         
                         <input type="hidden" name="listname" value="todo">
@@ -43,9 +43,9 @@
                     <ul>
                         <form action="/delete" method="post">
 
-                        <li><input type="checkbox" id="checkbox" id="progress"> task <button type="submit" name="deleteItem">&#215</button></li>
+                        <li> task <button type="submit" name="deleteItem">&#215</button></li>
                         <%  for(var i=0;i<progressListItems.length; i++){ %>
-                            <li><input type="checkbox" id="checkbox" class="progress" ><%= progressListItems[i].name %><button type="submit" name="deleteItem" value="<%= progressListItems[i]._id %>">&#215</button></li>
+                            <li><%= progressListItems[i].name %><button type="submit" name="deleteItem" value="<%= progressListItems[i]._id %>">&#215</button></li>
                         <% } %>
                         
                         <input type="hidden" name="listname" value="inProgress">
@@ -63,9 +63,9 @@
                 <ul>
                     <form action="/delete" method="post">
 
-                    <li><input type="checkbox" id="checkbox" id="done"> task <button type="submit" name="deleteItem">&#215</button></li>
+                    <li> task <button type="submit" name="deleteItem">&#215</button></li>
                     <%  for(var i=0;i<doneListItems.length; i++){ %>
-                        <li><input type="checkbox" id="checkbox" class="done" ><%= doneListItems[i].name %><button type="submit" name="deleteItem" value="<%= doneListItems[i]._id %>">&#215</button></li>
+                        <li><%= doneListItems[i].name %><button type="submit" name="deleteItem" value="<%= doneListItems[i]._id %>">&#215</button></li>
                     <% } %> 
                     
                     <input type="hidden" name="listname" value="done">
