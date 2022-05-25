@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>homepage</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    </head>
+
+    <body>
+        
+            <div class="todo">
+                <h3 id="title">To do </h3>
+                <!-- <input type="text" id="myInput" placeholder="Add Task">
+                <button  onclick="addElement(this)" id="addItem">+</button> -->
+                <form action="/" method="post">
+                    <input type="text" name="myInput" id="myInput" class="Todo" placeholder="Add Task">
+                    <button type="submit" name="addItem" value="todo">Add</button>
+                    </form><br>
+    
+                    <ul>
+                        <form action="/delete" method="post">
+
+                        <li><input type="checkbox" id="checkbox" id="todo"> task <button type="submit" name="deleteItem">&#215</button></li>
+                        <%  for(var i=0;i<todoListItems.length; i++){ %>
+                            <li><input type="checkbox" id="checkbox" class="todo" ><%= todoListItems[i].name %><button type="submit" name="deleteItem" value="<%= todoListItems[i]._id %>">&#215</button></li>
+                        <% } %> 
+                        
+                        <input type="hidden" name="listname" value="todo">
+                        </form>   
+                    </ul>
+            </div>
+
+            <div class="progress">
+                <h3 id="title">In Progress </h3>
+                <form action="/" method="post">
+                    <input type="text" name="myInput" class="Progress" id="myInput" placeholder="Add Task">
+                    <button type="submit" name="addItem" value="inProgress">Add</button>
+                    </form><br>
+    
+                    <ul>
+                        <form action="/delete" method="post">
+
+                        <li><input type="checkbox" id="checkbox" id="progress"> task <button type="submit" name="deleteItem">&#215</button></li>
+                        <%  for(var i=0;i<progressListItems.length; i++){ %>
+                            <li><input type="checkbox" id="checkbox" class="progress" ><%= progressListItems[i].name %><button type="submit" name="deleteItem" value="<%= progressListItems[i]._id %>">&#215</button></li>
+                        <% } %>
+                        
+                        <input type="hidden" name="listname" value="inProgress">
+                        </form>   
+                    </ul>
+            </div>
+
+            <div class="done">
+                <h3 id="title">Done </h3>
+                <form action="/" method="post">
+                <input type="text" name="myInput" class="Done" id="myInput" placeholder="Add Task">
+                <button type="submit" name="addItem" value="done">Add</button>
+                </form><br>
+
+                <ul>
+                    <form action="/delete" method="post">
+
+                    <li><input type="checkbox" id="checkbox" id="done"> task <button type="submit" name="deleteItem">&#215</button></li>
+                    <%  for(var i=0;i<doneListItems.length; i++){ %>
+                        <li><input type="checkbox" id="checkbox" class="done" ><%= doneListItems[i].name %><button type="submit" name="deleteItem" value="<%= doneListItems[i]._id %>">&#215</button></li>
+                    <% } %> 
+                    
+                    <input type="hidden" name="listname" value="done">
+                    </form>   
+                </ul>
+            </div>
+
+        
+        <script src="homepage.js" async defer></script>
+    </body>
+</html>
